@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'fonts' as *;
 
 html {
     box-sizing: border-box;
@@ -15,4 +16,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: $neutral-light-grayish-cyan;
+    font-family: $font-space-mono;
+    font-weight: $font-weight;
 }
