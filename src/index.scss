@@ -29,12 +29,16 @@
         }
 
         .TipInputCard {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
             .bill-input-wrapper,
             .person-input-wrapper {
                 label {
                     color: $neutral-grayish-cyan;
                 }
+                
             }
 
             .input-box {
@@ -45,16 +49,19 @@
                 align-items: center;
                 border-radius: 7px;
                 margin-top: 0.5rem;
+                border: 2px solid transparent;
 
                 input {
                     font-family: $font-space-mono;
                     font-size: $input-font-size;
+                    color: $neutral-dark-cyan;
                     background: none;
                     outline: none;
                     border: none;
                     text-align: right;
                     appearance: textfield;
                     width: 100%;
+                    
 
                     // chrome, safari, edge, opera
                     &::-webkit-outer-spin-button,
@@ -63,11 +70,116 @@
                     }
                 }
             }
+
+            .focus-style {
+                border: 2px solid $primary-color;
+            }
+
+            .error-style {
+                border: 2px solid rgb(211, 45, 45);
+            }
+
+            .tip-select-wrapper {
+
+                .tip-select-items {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    justify-content: space-between;  
+                    
+                    input {
+                        outline: none;
+                        border: 2px solid transparent;
+                        font-size: $input-font-size;
+                        padding: 0.5rem 0.5rem;
+                        width: 90%;
+                        margin: 0.5rem 0;
+                        font-family: $font-space-mono;
+                        font-weight: $font-weight;
+                        border-radius: 7px;
+                        background-color: $neutral-dark-cyan;
+                        color: $neutral-white;
+                    }
+
+                    input[type=number] {
+                        text-align: right;
+                        background-color: $neutral-very-light-grayish-cyan;
+                        color: $neutral-dark-cyan;
+                        // chrome, safari, edge, opera
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+
+                        &:focus {
+                            border: 2px solid $primary-color;
+                        }
+                    }
+                }
+            }
+            
+            .person-input-wrapper {
+                position: relative;
+                .person-input-error {
+                    position: absolute;
+                    right: 0;
+                    color: rgb(211, 45, 45);
+                    display: none;
+
+                    &.isVisible {
+                       display: inline-block;
+                   }
+                }
+            }
+            
         }
 
         .TipOutputCard {
             background-color: $neutral-dark-cyan;
             border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .tip-amount,
+            .tip-total {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & span:first-child {
+                    color: $neutral-white;
+                }
+
+                & span:last-child {
+                    color: $neutral-grayish-cyan;
+                }
+
+                p {
+                    font-size: 2.5rem;
+                    color: $primary-color;
+                }
+            }
+
+
+            .reset-btn {
+                margin-bottom: 2.5rem;
+                padding: 0.6rem;
+                font-size: 1.2rem;
+                font-family: $font-space-mono;
+                font-weight: $font-weight;
+                text-transform: uppercase;
+                outline: none;
+                border: transparent;
+                border-radius: 4px;
+                background-color: $primary-color;
+                color: $neutral-dark-cyan;
+                opacity: 0.2;
+
+
+                &.visible {
+                    opacity: 1;
+                }
+            }
         }
 
     }
