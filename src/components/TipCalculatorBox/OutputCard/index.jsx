@@ -1,4 +1,4 @@
-export default function OutputCard() {
+export default function OutputCard({ perPersonTip, perPersonTotal, reset }) {
   return (
     <div className="TipOutputCard">
       <div>
@@ -8,7 +8,11 @@ export default function OutputCard() {
             <br />
             <span>/ person</span>
           </div>
-          <p>$0.00</p>
+          {perPersonTip !== "Infinity" && perPersonTip >= 0 ? (
+            <p>${perPersonTip}</p>
+          ) : (
+            <p>$0.00</p>
+          )}
         </div>
         <div className="tip-total">
           <div>
@@ -16,12 +20,22 @@ export default function OutputCard() {
             <br />
             <span>/ person</span>
           </div>
-          <p>$0.00</p>
+          {perPersonTotal !== Infinity && perPersonTotal >= 0 ? (
+            <p>${perPersonTotal}</p>
+          ) : (
+            <p>$0.00</p>
+          )}
         </div>
       </div>
-      <button type="button" className="reset-btn">
-        Reset
-      </button>
+      {perPersonTip !== "Infinity" && perPersonTip !== "NaN" ? (
+        <button type="button" className="reset-btn" onClick={() => reset()}>
+          Reset
+        </button>
+      ) : (
+        <button type="button" className="reset-btn disabled">
+          Reset
+        </button>
+      )}
     </div>
   );
 }

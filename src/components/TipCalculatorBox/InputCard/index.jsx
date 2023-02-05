@@ -9,7 +9,7 @@ export default function InputCard({ setBill, setTip, setPerson }) {
 
   const getTip = (e) => {
     let value = e.target.value.split("%");
-    setTip(value[0]);
+    setTip(Number(value[0]));
   };
 
   const personValidation = (e) => {
@@ -42,7 +42,7 @@ export default function InputCard({ setBill, setTip, setPerson }) {
             type="number"
             id="BillInputController"
             placeholder="0"
-            onChange={(e) => setBill(e.target.value)}
+            onChange={(e) => setBill(Number(e.target.value))}
           />
         </div>
       </div>
