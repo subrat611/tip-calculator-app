@@ -1,5 +1,8 @@
 # Tip calculator app
 
+![Screenshot from 2023-02-05 20-48-27](https://user-images.githubusercontent.com/77252075/216828054-1f8e47ae-9351-4fdd-84b9-c5fb0cc49a8a.png)
+
+
 ## Table of contents
 
 - [Overview](#overview)
