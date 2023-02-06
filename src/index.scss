@@ -100,6 +100,10 @@
                         color: $neutral-white;
                     }
 
+                    .active-btn-style {
+                        background-color: $primary-color;
+                    }
+
                     input[type=number] {
                         text-align: right;
                         background-color: $neutral-very-light-grayish-cyan;

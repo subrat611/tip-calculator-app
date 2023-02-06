@@ -3,20 +3,22 @@ import InputCard from "./InputCard";
 import OutputCard from "./OutputCard";
 
 export default function TipCalculatorBox() {
-  const [inputBill, setInputBill] = useState(0);
-  const [inputTip, setInputTip] = useState(0);
-  const [inputPerson, setInputPerson] = useState(0);
+  const [inputBill, setInputBill] = useState("");
+  const [inputTip, setInputTip] = useState("");
+  const [inputCustomTip, setInputCustomTip] = useState("");
+  const [inputPerson, setInputPerson] = useState("");
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     tipCalculate();
-  }, [inputTip, inputPerson]);
+  }, [inputTip, inputPerson, inputCustomTip]);
 
   const resetAll = () => {
-    setInputBill(0);
-    setInputTip(0);
-    setInputPerson(0);
+    setInputBill("");
+    setInputTip("");
+    setInputCustomTip("");
+    setInputPerson("");
     setTipAmount(0);
   };
 
@@ -29,14 +31,19 @@ export default function TipCalculatorBox() {
     // calculate the total per person
     // formula = bill * (1 + % of tip in decimal) / no of person
     let total = (inputBill * (1 + inputTip / 100)) / inputPerson;
-    setTotal(total);
+    setTotal(total.toFixed(2));
   };
 
   return (
     <div className="TipCalcBox">
       <InputCard
+        bill={inputBill}
+        tipValue={inputTip}
+        customTip={inputCustomTip}
+        person={inputPerson}
         setBill={setInputBill}
         setTip={setInputTip}
+        setCustomTip={setInputCustomTip}
         setPerson={setInputPerson}
       />
       <OutputCard

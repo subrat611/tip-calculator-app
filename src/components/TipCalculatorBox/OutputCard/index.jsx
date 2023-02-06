@@ -20,7 +20,7 @@ export default function OutputCard({ perPersonTip, perPersonTotal, reset }) {
             <br />
             <span>/ person</span>
           </div>
-          {perPersonTotal !== Infinity && perPersonTotal >= 0 ? (
+          {perPersonTotal !== "Infinity" && perPersonTotal >= 0 ? (
             <p>${perPersonTotal}</p>
           ) : (
             <p>$0.00</p>
