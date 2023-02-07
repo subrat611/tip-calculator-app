@@ -9,6 +9,7 @@ export default function TipCalculatorBox() {
   const [inputPerson, setInputPerson] = useState("");
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [activeBtn, setActiveBtn] = useState(null);
 
   useEffect(() => {
     tipCalculate();
@@ -20,6 +21,7 @@ export default function TipCalculatorBox() {
     setInputCustomTip("");
     setInputPerson("");
     setTipAmount(0);
+    setActiveBtn(null);
   };
 
   const tipCalculate = () => {
@@ -41,10 +43,12 @@ export default function TipCalculatorBox() {
         tipValue={inputTip}
         customTip={inputCustomTip}
         person={inputPerson}
+        activeBtn={activeBtn}
         setBill={setInputBill}
         setTip={setInputTip}
         setCustomTip={setInputCustomTip}
         setPerson={setInputPerson}
+        setActiveBtn={setActiveBtn}
       />
       <OutputCard
         perPersonTip={tipAmount}

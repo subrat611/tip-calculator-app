@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <img src={TitleLogo} alt="logo" />
+        <img src={TitleLogo} alt="logo" className="logo" />
       </div>
       <TipCalculatorBox />
     </div>

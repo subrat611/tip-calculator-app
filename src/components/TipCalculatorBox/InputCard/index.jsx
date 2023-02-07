@@ -8,13 +8,14 @@ export default function InputCard({
   bill,
   customTip,
   person,
+  activeBtn,
   setBill,
   setTip,
   setCustomTip,
   setPerson,
+  setActiveBtn,
 }) {
   const [InputError, setInputError] = useState(false);
-  const [activeBtn, setActiveBtn] = useState(null);
 
   const getTip = (e, i) => {
     setActiveBtn(i);
